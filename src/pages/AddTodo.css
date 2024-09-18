@@ -1,0 +1,19 @@
+.add-todo-container {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-select {
+    border-radius: 5px;
+}
+
+.custom-textarea {
+    border-radius: 5px;
+    resize: none;
+}
+
+h1 {
+    color: #333;
+}
