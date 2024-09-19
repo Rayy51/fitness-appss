@@ -6,6 +6,7 @@ const Goals = () => {
         bodyWeight: '',
         muscleGain: '',
     });
+    const [goalList, setGoalList] = useState([]);
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -14,6 +15,7 @@ const Goals = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        setGoalList([...goalList, goalData]);
         console.log('Goals set:', goalData);
         setGoalData({ bodyWeight: '', muscleGain: '' });
     };
@@ -52,8 +54,13 @@ const Goals = () => {
             </form>
             <div className="goal-summary">
                 <h2>Your Goals</h2>
-                <p>Target Body Weight: {goalData.bodyWeight} kg</p>
-                <p>Target Muscle Gain: {goalData.muscleGain} kg</p>
+                <ul>
+                    {goalList.map((goal, index) => (
+                        <li key={index}>
+                            Target Body Weight: {goal.bodyWeight} kg, Target Muscle Gain: {goal.muscleGain} kg
+                        </li>
+                    ))}
+                </ul>
             </div>
         </div>
     );
